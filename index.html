@@ -2202,7 +2202,7 @@ function updateOverview() {
   $('ovShopDesc').textContent = currentShop.description || '—';
   $('ovShopCity').textContent = currentShop.city || '—';
   $('ovShopCat').textContent = currentShop.category || '—';
-  var link = location.origin + '/marketplace.html?shop=' + shopId;
+  var link = location.origin + '/index.html?shop=' + shopId;
   $('ovShopLink').textContent = link;
   $('ovShopAv').textContent = (currentShop.name || 'S').charAt(0).toUpperCase();
   if (currentShop.logo) { $('ovShopAv').innerHTML = '<img src="' + currentShop.logo + '" alt="">'; }
@@ -2624,13 +2624,13 @@ async function uploadToCloudinary(file, cb) {
 }
 
 window.copyLink = function() {
-  var link = location.origin + '/marketplace.html?shop=' + shopId;
+  var link = location.origin + '/index.html?shop=' + shopId;
   navigator.clipboard.writeText(link).then(function() { toast('Lien copié !','ok'); });
 };
 
 window.previewShop = function() {
   if (!shopId) { toast('Créez d\'abord votre boutique.','w'); return; }
-  window.open('marketplace.html?shop=' + shopId, '_blank');
+  window.open('index.html?shop=' + shopId, '_blank');
 };
 
 window.openAuth = function(tab) {
